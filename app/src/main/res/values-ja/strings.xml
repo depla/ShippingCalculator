@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">配送料計算</string>
+    <string name="weightOfThePackageLabel">パッケージの重さ</string>
+    <string name="inOuncesLabel">（オンス）</string>
+    <string name="baseCostLabel">基本コスト:</string>
+    <string name="addedCostLabel">追加費用：</string>
+    <string name="totalShippingCostLabel">送料合計：</string>
+</resources>
