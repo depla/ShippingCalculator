@@ -10,6 +10,19 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+/**
+ * Shipping Calculator - Takes in a weight of an object and calculates how much it would
+ * cost to ship it
+ *
+ * ALGORITHM
+ * 1. Have the user enter a number in the editText
+ * 2. Extract that number and update the model
+ * 3. Have the model calculate the added cost and total cost
+ * 4. Retrieve the data from the model and update the textViews
+ *
+ * @author Dennis La
+ * @version 1.0
+ */
 public class MainActivity extends AppCompatActivity {
 
     NumberFormat currency = NumberFormat.getCurrencyInstance(Locale.getDefault());
@@ -23,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
     //member variables for our model
     private ShipItem item;
 
+    /**
+     * Creates the main activity, initializes all views and the model. listens to the edit text
+     * view for changes
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +71,19 @@ public class MainActivity extends AppCompatActivity {
                 //do nothing
             }
 
+            /**
+             * Listens to the editTextView. When the text changes, the model is updated
+             * and the model info is retrieved and used to update the text views
+             *
+             * @param s
+             * @param start
+             * @param before
+             * @param count
+             */
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 //update model
+                //if there is something in the edit text
                 if (weightEditText.getText().toString().length() > 0)
                 {
                     item.setWeight(Double.parseDouble(weightEditText.getText().toString()));
